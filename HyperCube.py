@@ -14,8 +14,6 @@ import matplotlib.pyplot as plt
 import random
 import timeit
 
-start = timeit.default_timer()
-
 
 # Class of Atom, each atom has a name which is an int and a rate which is Lambda or arrival rate for that atom
 class Atom:
@@ -28,6 +26,7 @@ class Atom:
     def ownList(self):
         x=int(self.name)
         return(self.preferenceList[x-1])
+    
         
 class Servers:
     def __init__(self, name, preferenceList, currentStatus, servicerate, numberofServers , location):
@@ -142,18 +141,17 @@ def Size(obj1,obj2):
 
 ###############################################################################
 
-#--------------------------#2 servers----------------------------
+#------------------ servers----------------------------------------
 pList=[[1,2],[1,2],[1,2],[1,2]]#,[1,3,2],[3,2,1]]
 numberOfServers=2
 currentStatusList=[0,0]
 ServiceRate=[2.5,3.5]
 ServerLocations=[(20,10), (20,30)]
-#------------------Atoms-----------------------------------------
+#--------------------Atoms-----------------------------------------
 numberOfAtoms=4
-ArrivalRate=[1, 1, 1, 1]#, 1, 1]
-DegredationRate=[100, 100, 100, 10]# 0.3, 0.3]#1,1,1]
-#AtomLocations=[(1,1),(2,1),(1,2),(2,2),(1,3),(2,3)]
-AtomLocations=[(10,10), (20,10), (30,10), (10,20)]#, (20,30), (30,30)]
+ArrivalRate=[1, 1, 1, 1]
+DegredationRate=[100, 100, 100, 10]
+AtomLocations=[(10,10), (20,10), (30,10), (10,20)]
 
 server=[]
 for i in range(0, numberOfServers):
